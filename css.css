@@ -1,0 +1,837 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+  --primary-color: #a855f7;
+  --primary-color-dark: #9333ea;
+  --secondary-color: #ca8a04;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --extra-light: #faf5ff;
+  --max-width: 1200px;
+}
+
+footer {
+  background-color: white; /* White background for footer */
+  color: black;             /* Black text color */
+  padding: 10px;            /* Add some padding */
+  text-align: center;       /* Center align the text */
+  width: 100%;              /* Make the footer span the entire width */
+  position: fixed;          /* Keep the footer fixed at the bottom */
+  bottom: 0;             /* Align it at the bottom of the page */
+  box-shadow: 0px -2px 10px rgba(50, 50, 50, 0.1);   
+}
+
+footer-content {
+  font-size: 16px;      
+  font-weight: normal;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adding shadow to the text */
+}    /* Adjust font size */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  z-index: 99;
+}
+
+.nav__content {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+nav .logo a:hover {
+  color: var(--primary-color-dark);
+}
+
+nav .checkbox {
+  display: none;
+}
+
+nav input {
+  display: none;
+}
+nav .checkbox i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  list-style: none;
+  transition: left 0.3s;
+}
+
+ul li a {
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: 0.3s;
+}
+
+ul li a:hover {
+  border-top-color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.section {
+  background-color: var(--extra-light);
+}
+
+.section__container {
+  min-height: 100vh;
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action__btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action__btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire__me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hire__me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
+}
+
+.image {
+  display: grid;
+  place-items: center;
+}
+.image img {
+    width: min(25rem, 90%);
+    height: min(25rem, 90%); /* Ensure width and height are the same */
+    border-radius: 50%; /* Apply full rounding for a circle */
+    object-fit: cover; /* Keeps the image proportionate */
+  }
+
+@media (width < 780px) {
+  nav .checkbox {
+    display: block;
+  }
+
+  ul {
+    position: absolute;
+    width: 100%;
+    height: calc(100vh - 85px);
+    left: -100%;
+    top: 85px;
+    background-color: var(--extra-light);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  nav #check:checked ~ ul {
+    left: 0;
+  }
+
+  ul li a {
+    font-size: 1.0rem;
+    gap: 10px;
+        padding: 0.5rem 0.75rem; /* Adjust padding for tighter spacing */
+      }
+  
+
+  .section__container {
+    padding: 0px;
+    text-align: center;
+    grid-template-columns: repeat(1, 1fr);}
+   
+
+  .image {
+    grid-area: 1/1/1/1;
+  }
+  .image img {
+    margin: 0; /* Center without extra spacing */
+}
+
+  .action__btns {
+    margin: 50px;
+  }
+  }
+
+  /* Work Experience Section Styling */
+/* Page 2 Styling Consistent with Page 1 */
+
+
+/* Page 2 Specific CSS */
+.page2 {
+  background-color: var(--extra-light);
+  margin-top: 85px; /* Adjust based on navbar height */
+  padding: 2rem;
+}
+
+/* General content styling for Page 2 */
+.page2 h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.page2 .timeline-content {
+  display: flex;
+  justify-content: space-between; /* Ensures space between name and image */
+  align-items: center; /* Vertically centers the content */
+}
+
+.page2 .timeline-content h4 {
+  font-size: 1.5em;
+  margin-right: 20px;
+  display: inline; /* Adds space between the name and the image */
+}
+
+.page2 .school-image {
+  width: 80px; /* Set width of the image */
+  height: 80px; /* Set height of the image */
+  border-radius: 50%; /* Makes the image circular */
+  border: 2px solid #6b7280; /* Optional: Adds a border around the image */
+}
+
+.page2 .timeline-item span {
+  font-weight: bold;
+  display: inline;
+  width: 150px; /* Set width for date/time to align the content */
+}
+
+.page2 .timeline {
+  position: relative;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1.5rem;
+}
+
+.page2 .timeline-item {
+  position: relative;
+  margin-left: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.page2 .timeline-item:first-child {
+  border-top: none;
+}
+.video-note {
+  color: red !important;
+}
+
+.page2 .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 1rem;
+  width: 15px;
+  height: 15px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+.page2 .timeline-item span {
+  font-size: 1rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+
+.page2 .timeline-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin: 0.2rem 0;
+}
+
+.page2 .timeline-item p {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+/* Small Screens (Tablets and Phones) */
+@media (max-width: 780px) {
+  .page2 .school-image{display:none}}
+
+
+/*PAGE 3*//* Container for Work Experience and Skills sections */
+/* General Container Styling */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible columns for responsive layout */
+  gap: 2rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 0.5rem;
+}
+
+/* Section Styling for .page3 and .skills */
+.page3, .skills {
+  background-color: var(--extra-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings in Sections */
+.page3 h2, .skills h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 3rem; /* Space below the heading */
+  padding-top: 3rem; /* Space above the heading */
+  z-index: 1; /* Ensure the title appears on top */
+}
+
+/* Timeline Styling */
+.page3 .timeline, .skills .timeline {
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1.5rem;
+  display: block; /* Ensures timeline items are stacked */
+}
+
+/* Timeline Items */
+.page3 .timeline-item, .skills .timeline-item {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  display: block; /* Ensure stacking of items */
+}
+
+/* Styling for First Timeline Item */
+.page3 .timeline-item:first-child, .skills .timeline-item:first-child {
+  border-top: none; /* Remove top border from the first item */
+}
+
+/* Timeline Bullet Points */
+.page3 .timeline-item::before, .skills .timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 1.5rem;
+  width: 15px;
+  height: 15px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+}
+
+/* Skills List Styling */
+.skills .timeline-item ul {
+  list-style: inside;
+  margin-left: 1.5rem;
+  padding: 0;
+  display: block; /* Ensures list items stack vertically */
+}
+
+/* Individual Skill List Items */
+.skills .timeline-item li {
+  display: list-item; /* Treat each as a list item */
+  margin-bottom: 0.5rem; /* Space between each skill */
+  padding-left: 0.5rem; /* Optional padding for spacing */
+}
+
+/* Media Queries for Responsive Design */
+
+/* Small Screens (Tablets and Phones) */
+@media (max-width: 780px) {
+  .container {
+    grid-template-columns: 1fr; /* Single-column layout on small screens */
+    padding: 0 1rem; /* Ensure there's no overflow on the left and right */
+  }
+
+  .page3, .skills {
+    margin-left: 0; /* Ensure there’s no extra margin */
+    margin-right: 0; /* Ensure there’s no extra margin */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    margin-top:30px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    padding: 0.5rem; /* Reduced padding for very small screens */
+    margin-top:30px;
+  }
+
+  .page3, .skills {
+    padding: 1rem; /* Maintain padding inside sections */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow for smaller screens */
+  }
+  .page3 .timeline-item p{display: none;}
+}
+
+
+
+
+
+/* Page 4 Specific CSS */
+.page4 {
+  background-color: var(--extra-light);
+  padding: 2rem;
+  margin-top: 0px; /* Adjust for navbar height */
+  margin: 0; /* Remove all margins to make it full width */
+  width: 100%; /* Ensure full width */
+
+}
+
+/* Title Styling for Page 4 *//* Page 4 Specific CSS */
+.page4 {
+  background-color: var(--extra-light);
+  padding: 1rem; /* Padding for the entire section */
+  margin-top: 20px; /* Adjust for navbar height */
+  width: 100%; /* Use full viewport width */
+}
+
+/* Title Styling for Page 4 */
+.page4 h1 {
+  font-size: 2.5rem; /* Adjusted for better visibility */
+  color: var(--text-dark);
+  text-align: center;
+  margin-top:3px; /* Ensure there's space above and below the title */
+  padding-top: 3rem; /* Space above the title */
+}
+.page4 header p{text-align: center;}
+.page4 h2 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  text-align: left;
+  margin:  0; /* Ensure there's space above and below the title */
+}
+
+
+/* Container Layout */
+.page4__container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 0rem;
+  padding: 1.0rem;
+}
+
+.page4 .timeline-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.page4 .timeline {
+  text-align: right;
+  font-style: italic;
+  margin: 0;
+}
+
+/* List styles */
+.page4 ul.topic {
+  list-style-type: disc;
+  margin-left: 20px;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.page4 ul.list {
+  list-style-type: circle;
+  margin-left: 40px;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.page4 ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  display: block;
+  margin-left: 10px;
+}
+
+.page4 footer {
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 750px) {
+  .page4 .page4__container {
+    padding: 1rem;
+  }
+
+  .page4 .timeline-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page4 .timeline {
+    margin-top: 5px;
+  }
+}
+
+
+/* Basic Reset */
+
+/* Body Styling */
+.page5 {
+  background-color: var(--extra-light);
+  overflow: hidden;
+  min-height: 100vh;
+} 
+/* Contact Note Styling - Centered Below Navbar */
+
+.contact-note {  
+  text-align: center;
+  font-size: 1em;
+  color:#555;
+  margin-bottom: 40px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+/* Contact Grid Layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  max-width: 100%;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* Social Links Styling */
+.social-links {
+  text-align: center;
+}
+
+.social-links h4 {
+  font-size: 1.5em;
+  margin-bottom: 8px;
+  margin-top:20px;
+
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin-left: 40%;
+}
+.social-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1em;
+  color: black;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.social-icon i {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex; /* Ensures the child content is centered */
+  justify-content: center; /* Horizontally centers the content */
+  align-items: center; /* Vertically centers the content */
+}
+.social-icon:hover {
+  color:var(--primary-color-dark);  /* Text color when hovered */
+}
+
+.contact-form-container {
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width:450px;
+  gap:5px;
+  height:100%;
+  margin-top: 0px;
+ 
+  
+
+}
+
+.contact-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-form{margin-top: 10px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5px;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background-color: var(--primary-color-dark);
+  color: white;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  
+}
+
+.submit-btn:hover {
+  background-color: #555;
+}
+
+
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;  /* Single column on small screens */
+  }
+
+  .social-icons a {
+    font-size: 1rem;  /* Smaller icons on mobile */
+  }
+
+  .social-icons i {
+    font-size: 1rem;  /* Smaller icon size on mobile */
+  }
+
+  .contact-form-container {
+    gap: 15px;
+    margin-bottom:30px;
+  }
+
+}
+
+.page6 {
+  background-color: var(--extra-light); 
+  margin-top: 85px; /* Adjust based on navbar height */
+  padding: 30px;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Ensures padding is included in height */
+}
+
+.page6 h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2pc;
+}
+.dektopview {
+  display: block;
+}
+
+.hiddenondesktop {
+  display: none;
+}
+.page6 table {
+
+  font-size: 1em;
+  border-collapse: collapse;
+  padding: 15px; /* Ensures borders merge correctly */
+  height: 350px;
+  margin-top: 10px;
+  }
+
+.page6 th, .page6 td {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #464444; /* Thick border around each cell */
+}
+
+.page6 th {
+  font-size: 1em;
+  background-color: #f4f4f4; /* Light background for headers */
+}
+
+.page6 th {
+  background-color: #cea3f7;
+  font-size: large;
+  padding:13px;
+}
+
+.page6 tbody tr:nth-child(even) {
+  background-color: #cea3f7;
+}
+
+.page6 tbody tr:hover {
+  background-color: #676565;
+}
+
+.page6 footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+}
+
+.page6 footer small {
+  font-size: 0.8em;
+}
+/* Page 6: Media Query for Mobile View */
+@media screen and (max-width: 768px) {
+  /* Navigation bar */
+  .page6 .nav__content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .page6 .nav__content ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .page6 .nav__content li {
+    margin-left: 0;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .page6 .logo {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  /* Page layout */
+  .page6 {
+    padding: 10px;
+  }
+
+  .page6 h2 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  /* Table styling */
+  .page6 table {
+    width: 100%;
+    font-size: 0.7em;
+  }
+
+  .page6 th, .page6 td {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .page6 th {
+    font-size: 0.9em;
+  }
+
+  /* Footer */
+  .page6 footer {
+    padding: 10px 5px;
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 500px) { .dektopview {
+  display: none;
+}
+
+.hiddenondesktop {
+  display: block;
+}
+}
